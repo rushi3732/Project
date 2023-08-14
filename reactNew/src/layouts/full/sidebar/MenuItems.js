@@ -22,9 +22,9 @@ const Menuitems = [
   },
   {
     id: uniqueId(),
-    title: 'Typography',
+    title: 'Account',
     icon: IconTypography,
-    href: '/ui/typography',
+    href: '/ui/accountList',
   },
   {
     id: uniqueId(),

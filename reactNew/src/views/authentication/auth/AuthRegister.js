@@ -1,8 +1,8 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
-import axios from 'axios';
 import { forwardRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
+import api from '../../../api/api';
 
 // Your ForwardedInput component definition
 const ForwardedInput = forwardRef((props, ref) => (
@@ -13,19 +13,19 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-    const onSubmit = (data) => {
-        axios.post('http://localhost:8080/register', data)
-            .then((response) => {
-                if (response.status === 200) {
-                    setShowSuccessMessage(true);
-                } else {
-                    throw new Error('Something went wrong ...');
-                }
-            })
-            .catch((error) => {
-                console.log('Something bad happened somewhere, rollback!', error);
-            });
+    const onSubmit = async (data) => {
+        try {
+            const response = await api.post('/register', data);
+            if (response.status === 200) {
+                setShowSuccessMessage(true);
+            } else {
+                throw new Error('Something went wrong ...');
+            }
+        } catch (error) {
+            console.log('Something bad happened somewhere, rollback!', error);
+        }
     };
+
 
     return (
         <>

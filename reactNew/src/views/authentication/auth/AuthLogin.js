@@ -2,12 +2,12 @@ import {
     Box, Button,
     Stack, Typography
 } from '@mui/material';
-import axios from 'axios';
 import { forwardRef, useState } from 'react';
 import { ReactSession } from 'react-client-session';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
+import api from '../../../api/api';
 
 const ForwardedInput = forwardRef((props, ref) => (
     <CustomTextField {...props} inputRef={ref} />
@@ -15,28 +15,27 @@ const ForwardedInput = forwardRef((props, ref) => (
 
 const AuthLogin = ({ title, subtitle, subtext }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [loginUserDetails, setLoginUserDetails] = useState({});
     const [isLoginSuccessVisible, setIsLoginSuccessVisible] = useState(false);
     const [isLoginInvalidVisible, setIsLoginInvalidVisible] = useState(false);
     const navigate = useNavigate();
 
-    const onSubmit = (loginUser) => {
-        axios.post('http://localhost:8080/loginUser', loginUser)
-            .then((response) => {
-                if (response.data.status === 200) {
-                    ReactSession.setStoreType('localStorage');
-                    ReactSession.set('userData', response.data.token);
-                    setIsLoginSuccessVisible(true);
-                    navigate('/dashboard'); // Assuming '/dashboard' is the correct route
-                } else if (response.data.status === 400) {
-                    setIsLoginInvalidVisible(true);
-                    throw new Error('Something went wrong ...');
-                }
-            })
-            .catch((error) => {
-                console.log('Something bad happened somewhere, rollback!', error);
-            });
+    const onSubmit = async (loginUser) => {
+        try {
+            const response = await api.post('/loginUser', loginUser);
+            if (response.data.status === 200) {
+                ReactSession.setStoreType('localStorage');
+                ReactSession.set('userData', response.data.token);
+                setIsLoginSuccessVisible(true);
+                navigate('/dashboard'); // Assuming '/dashboard' is the correct route
+            } else if (response.data.status === 400) {
+                setIsLoginInvalidVisible(true);
+                throw new Error('Something went wrong ...');
+            }
+        } catch (error) {
+            console.log('Something bad happened somewhere, rollback!', error);
+        }
     };
+
 
 
     return (
