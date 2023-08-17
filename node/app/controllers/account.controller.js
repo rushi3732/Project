@@ -40,3 +40,45 @@ exports.getAllAccounts = async (req, res) => {
     });
   }
 };
+
+exports.deleteAccount = async (req, res) => {
+    try {
+        const accountId = req.params.accountId;
+        const result = await accountService.deleteAccount(accountId);
+        if (result) {
+            res.status(200).json({
+                success: true,
+                message: 'Account deleted successfully',
+            });
+        } else {
+            res.status(404).json({
+                success: false,
+                message: 'Account not found',
+            });
+        }
+    } catch (error) {
+        console.error('Error deleting account:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+        });
+    }
+};
+
+exports.getAllAccountTypes = async (req, res) => {
+    try {
+        const accountTypes = await accountService.getAllAccountTypes();
+        res.status(200).json({
+            success: true,
+            data: accountsTypes,
+            message: 'Account Types fetched successfully',
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+        });
+    }
+};
+
+

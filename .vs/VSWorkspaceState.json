@@ -1,14 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\node",
+    "\\node\\app",
+    "\\node\\app\\routes",
+    "\\node\\app\\services",
+    "\\node\\app\\validation",
+    "\\reactNew",
     "\\reactNew\\src",
-    "\\reactNew\\src\\api",
-    "\\reactNew\\src\\assets",
     "\\reactNew\\src\\views",
-    "\\reactNew\\src\\views\\authentication\\auth",
-    "\\reactNew\\src\\views\\dashboard",
     "\\reactNew\\src\\views\\utilities"
   ],
-  "SelectedNode": "\\reactNew",
+  "SelectedNode": "\\node\\app\\controllers\\account.controller.js",
   "PreviewInSolutionExplorer": false
 }
