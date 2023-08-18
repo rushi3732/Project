@@ -7,5 +7,4 @@ exports.createAccountValidation = [
     body('accountHolder.contactInfo.email').isEmail().withMessage('Invalid email format'),
     body('accountHolder.contactInfo.phone').notEmpty().withMessage('Phone number is required'),
     body('balance').isFloat().withMessage('Invalid balance format'),
-    // Add validation for other fields as needed
 ];

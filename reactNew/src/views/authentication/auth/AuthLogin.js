@@ -1,7 +1,4 @@
-import {
-    Box, Button,
-    Stack, Typography
-} from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import { forwardRef, useState } from 'react';
 import { ReactSession } from 'react-client-session';
 import { useForm } from 'react-hook-form';

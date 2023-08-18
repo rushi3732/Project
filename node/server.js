@@ -44,8 +44,7 @@ app.use(function (req, res, next) {
 // Routes
  app.use(require("./app/routes/user.route"));
  app.use(require("./app/routes/account.route"));
-//app.use("/api/users", require("./app/routes/user.route")); // Replace with your user route path
-//app.use("/api/accounts", require("./app/routes/account.route"));
+
 
 // Set port, listen for requests
 const PORT = process.env.PORT || 8081;

@@ -65,6 +65,24 @@ exports.deleteAccount = async (req, res) => {
     }
 };
 
+exports.updateAccount = async (req, res) => {
+    try {
+        const accountId = req.params.accountId;
+        const updatedAccountData = req.body;
+        const updatedAccount = await accountService.updateAccount(accountId, updatedAccountData);
+        res.status(200).json({
+            success: true,
+            data: updatedAccount,
+            message: 'Account updated successfully',
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+        });
+    }
+};
+
 exports.getAllAccountTypes = async (req, res) => {
     try {
         const accountTypes = await accountService.getAllAccountTypes();
@@ -80,5 +98,6 @@ exports.getAllAccountTypes = async (req, res) => {
         });
     }
 };
+
 
 

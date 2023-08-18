@@ -24,4 +24,7 @@
     padding-top: 20px;
     max-width: unset !important;
   }
+.modal-header {
+    align-items: center !important;
+}
   

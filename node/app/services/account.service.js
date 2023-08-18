@@ -18,6 +18,14 @@ exports.getAllAccounts = async () => {
   }
 };
 
+exports.updateAccount = async (accountId, updatedAccountData) => {
+    try {
+        return await Account.findByIdAndUpdate(accountId, updatedAccountData, { new: true });
+    } catch (error) {
+        throw new Error('Error updating account');
+    }
+};
+
 
 exports.deleteAccount = async (accountId) => {
     try {
