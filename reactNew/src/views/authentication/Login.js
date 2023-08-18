@@ -50,7 +50,7 @@ const Login2 = () => {
                 subtitle={
                   <Stack direction="row" spacing={1} justifyContent="center" mt={3}>
                     <Typography color="textSecondary" variant="h6" fontWeight="500">
-                      New to Modernize?
+                      New to Rs Bank?
                     </Typography>
                     <Typography
                       component={Link}
