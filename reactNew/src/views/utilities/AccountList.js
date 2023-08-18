@@ -4,7 +4,6 @@ import api from 'src/api/api';
 
 const AccountList = () => {
     const [rowData, setRowData] = useState([]);
-    const [accountsTypes, setAccountsTypes] = useState([]);
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [actionTitle, setActionTitle] = useState("Create");
     const [formData, setFormData] = useState({
@@ -23,27 +22,19 @@ const AccountList = () => {
 
     useEffect(() => {
         fetchAccounts();
-        fetchAccountsTypes();
     }, []);
 
     const fetchAccounts = async () => {
         try {
             const response = await api.get('/accounts');
-            const accounts = response.data.data; 
+            const accountsAll = response.data.data; 
+            setRowData(accountsAll)
         } catch (error) {
             console.error('Error fetching accounts:', error);
         }
     };
  
-    const fetchAccountsTypes = async () => {
-        try {
-            const response = await api.get('/accountsType');
-            const accountsTypes = response.data.data; 
-            setAccountsTypes(accountsTypes);
-        } catch (error) {
-            console.error('Error fetching accounts Types:', error);
-        }
-    };
+    
     const close = () => {
         setShowCreateModal(false);
         setFormData({

@@ -6,9 +6,7 @@ const { updateAccountValidation } = require('../validation/updateAccount.Validat
 
 router.post('/saveaccounts', createAccountValidation, accountController.createAccount);
 router.get('/accounts', accountController.getAllAccounts);
-router.get('/accountsType', accountController.getAllAccountTypes);
 router.delete('/accountdeleteById/:accountId', accountController.deleteAccount);
 router.put('/accountupdate/:accountId', updateAccountValidation, accountController.updateAccount);
 
 module.exports = router;
-3

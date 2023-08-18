@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\node\\app",
-    "\\node\\app\\controllers",
-    "\\node\\app\\validation",
     "\\reactNew",
     "\\reactNew\\src",
-    "\\reactNew\\src\\components",
-    "\\reactNew\\src\\components\\container",
-    "\\reactNew\\src\\routes",
-    "\\reactNew\\src\\views\\utilities"
+    "\\reactNew\\src\\assets",
+    "\\reactNew\\src\\assets\\images",
+    "\\reactNew\\src\\assets\\images\\logos",
+    "\\reactNew\\src\\layouts",
+    "\\reactNew\\src\\layouts\\full",
+    "\\reactNew\\src\\layouts\\full\\shared",
+    "\\reactNew\\src\\layouts\\full\\shared\\logo"
   ],
-  "SelectedNode": "\\reactNew\\src\\routes\\Router.js",
+  "SelectedNode": "\\reactNew\\src\\layouts\\full\\shared\\logo\\Logo.js",
   "PreviewInSolutionExplorer": false
 }

@@ -1,21 +1,20 @@
 const Account = require('../models/account.model');
-const AccountsTypes = require('../models/accountsTypes.model');
 
 exports.createAccount = async (accountData) => {
-  try {
-    const newAccount = new Account(accountData);
-    return await newAccount.save();
-  } catch (error) {
-    throw error;
-  }
+    try {
+        const newAccount = new Account(accountData);
+        return await newAccount.save();
+    } catch (error) {
+        throw error;
+    }
 };
 
 exports.getAllAccounts = async () => {
-  try {
-    return await Account.find({});
-  } catch (error) {
-    throw error;
-  }
+    try {
+        return await Account.find({});
+    } catch (error) {
+        throw error;
+    }
 };
 
 exports.updateAccount = async (accountId, updatedAccountData) => {
@@ -38,12 +37,6 @@ exports.deleteAccount = async (accountId) => {
     }
 };
 
-exports.getAllAccountTypes = async () => {
-    try {
-        return await AccountsTypes.find({});
-    } catch (error) {
-        throw error;
-    }
-};
+
 
 
