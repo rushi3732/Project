@@ -28,9 +28,9 @@ const Menuitems = [
   },
   {
     id: uniqueId(),
-    title: 'Shadow',
+      title: 'Card',
     icon: IconCopy,
-    href: '/ui/shadow',
+    href: '/ui/card',
   },
   {
     navlabel: true,

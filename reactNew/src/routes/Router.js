@@ -11,7 +11,7 @@ const Dashboard = Loadable(lazy(() => import('../views/dashboard/Dashboard')))
 const SamplePage = Loadable(lazy(() => import('../views/sample-page/SamplePage')))
 const Icons = Loadable(lazy(() => import('../views/icons/Icons')))
 const AccountList = Loadable(lazy(() => import('../views/utilities/AccountList')))
-const Shadow = Loadable(lazy(() => import('../views/utilities/Shadow')))
+const Card = Loadable(lazy(() => import('../views/utilities/Card')))
 const Error = Loadable(lazy(() => import('../views/authentication/Error')));
 const Register = Loadable(lazy(() => import('../views/authentication/Register')));
 const Login = Loadable(lazy(() => import('../views/authentication/Login')));
@@ -26,7 +26,7 @@ const Router = [
       { path: '/sample-page', exact: true, element: <SamplePage /> },
       { path: '/icons', exact: true, element: <Icons /> },
       { path: '/ui/accountList', exact: true, element: <AccountList /> },
-      { path: '/ui/shadow', exact: true, element: <Shadow /> },
+      { path: '/ui/card', exact: true, element: <Card /> },
       { path: '*', element: <Navigate to="/auth/404" /> },
     ],
   },
