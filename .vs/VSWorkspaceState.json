@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\node",
     "\\reactNew",
     "\\reactNew\\src",
-    "\\reactNew\\src\\assets",
-    "\\reactNew\\src\\assets\\images",
-    "\\reactNew\\src\\assets\\images\\logos",
     "\\reactNew\\src\\layouts",
     "\\reactNew\\src\\layouts\\full",
-    "\\reactNew\\src\\layouts\\full\\shared",
-    "\\reactNew\\src\\layouts\\full\\shared\\logo"
+    "\\reactNew\\src\\layouts\\full\\shared\\logo",
+    "\\reactNew\\src\\routes",
+    "\\reactNew\\src\\theme",
+    "\\reactNew\\src\\views",
+    "\\reactNew\\src\\views\\utilities"
   ],
-  "SelectedNode": "\\reactNew\\src\\assets\\images\\logos\\dark-logo.svg",
+  "SelectedNode": "\\reactNew\\src\\views\\utilities\\AccountList.js",
   "PreviewInSolutionExplorer": false
 }

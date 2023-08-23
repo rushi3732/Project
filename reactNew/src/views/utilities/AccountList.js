@@ -143,12 +143,15 @@ const AccountList = () => {
                             <td>{account.accountHolder?.contactInfo?.email}</td>
                             <td>{account.accountHolder?.contactInfo?.phone}</td>
                             <td>{account.balance}</td>
-                            <td> <Button variant="primary" size="sm" onClick={() => handleUpdateButtonClick(account)}>Update</Button><Button variant="danger" size="sm" onClick={() => deleteAccount(account._id)}>Delete</Button></td>
+                            <td style={{ display: 'flex', justifyContent: "space-evenly" }}>
+                                <Button variant="primary" size="sm" className="g-5" onClick={() => handleUpdateButtonClick(account)}>Update</Button>
+                                <Button variant="danger" size="sm" onClick={() => deleteAccount(account._id)}>Delete</Button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </Table>
-            <Modal show={showCreateModal} onHide={close} Title="Close" backdrop="static" keyboard={false} >
+            <Modal show={showCreateModal} onHide={close}  backdrop="static" keyboard={false} >
                 <Modal.Header closeButton>
                     <Modal.Title className="text-muted">{actionTitle} Account</Modal.Title>
                 </Modal.Header>
