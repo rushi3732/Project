@@ -116,7 +116,6 @@ const AccountList = () => {
 
     return (
         <div>
-            <h3>Account List</h3>
             <Button variant="primary" size="sm" onClick={ShowCreateModal}>
                 Create Account
             </Button>
