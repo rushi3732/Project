@@ -11,7 +11,7 @@ const CardItem = (props) => {
     }
     return (
         <div className="card">
-            <img src={`${imageUrl}`} className="card-img-top" alt="Card Image" />
+        <img src={`${imageUrl}`} className="card-img-top" alt="Card with landscape view and mountains" />
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{text}</p>
