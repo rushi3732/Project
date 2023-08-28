@@ -1,5 +1,5 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
-import { forwardRef, useState } from 'react';
+import { forwardRef } from 'react';
 import { ReactSession } from 'react-client-session';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -12,8 +12,6 @@ const ForwardedInput = forwardRef((props, ref) => (
 
 const AuthLogin = ({ title, subtitle, subtext }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [isLoginSuccessVisible, setIsLoginSuccessVisible] = useState(false);
-    const [isLoginInvalidVisible, setIsLoginInvalidVisible] = useState(false);
     const navigate = useNavigate();
 
     const onSubmit = async (loginUser) => {
@@ -22,10 +20,8 @@ const AuthLogin = ({ title, subtitle, subtext }) => {
             if (response.data.status === 200) {
                 ReactSession.setStoreType('localStorage');
                 ReactSession.set('userData', response.data.token);
-                setIsLoginSuccessVisible(true);
                 navigate('/dashboard'); // Assuming '/dashboard' is the correct route
             } else if (response.data.status === 400) {
-                setIsLoginInvalidVisible(true);
                 throw new Error('Something went wrong ...');
             }
         } catch (error) {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal, Form, Table } from 'react-bootstrap';
 import api from 'src/api/api';
+import ApplyForATM from './ApplyForATM/ApplyForATM ';
 
 const AccountList = () => {
     const [rowData, setRowData] = useState([]);
@@ -114,6 +115,10 @@ const AccountList = () => {
     };
 
 
+    const handleApplySuccess = () => {
+        fetchAccounts();
+    };
+
     return (
         <div>
             <Button variant="primary" size="sm" onClick={ShowCreateModal}>
@@ -129,6 +134,7 @@ const AccountList = () => {
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Balance</th>
+                        <th>Apply</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -142,6 +148,9 @@ const AccountList = () => {
                             <td>{account.accountHolder?.contactInfo?.email}</td>
                             <td>{account.accountHolder?.contactInfo?.phone}</td>
                             <td>{account.balance}</td>
+                            <td>
+                                <ApplyForATM accountId={account._id} onApplySuccess={handleApplySuccess} />
+                            </td>
                             <td style={{ display: 'flex', justifyContent: "space-evenly" }}>
                                 <Button variant="primary" size="sm" className="g-5" onClick={() => handleUpdateButtonClick(account)}>Update</Button>
                                 <Button variant="danger" size="sm" onClick={() => deleteAccount(account._id)}>Delete</Button>

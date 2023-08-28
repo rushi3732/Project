@@ -1,16 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\node",
     "\\reactNew",
     "\\reactNew\\src",
-    "\\reactNew\\src\\layouts",
-    "\\reactNew\\src\\layouts\\full",
-    "\\reactNew\\src\\layouts\\full\\shared\\logo",
-    "\\reactNew\\src\\routes",
-    "\\reactNew\\src\\theme",
     "\\reactNew\\src\\views",
-    "\\reactNew\\src\\views\\utilities"
+    "\\reactNew\\src\\views\\utilities",
+    "\\reactNew\\src\\views\\utilities\\Atm",
+    "\\reactNew\\src\\views\\utilities\\CardInfo"
   ],
   "SelectedNode": "\\reactNew\\src\\views\\utilities\\AccountList.js",
   "PreviewInSolutionExplorer": false
